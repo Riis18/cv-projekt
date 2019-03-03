@@ -1,0 +1,23 @@
+<mat-card class="jobs">
+  <mat-card-title>Erhvervserfaring</mat-card-title>
+  <mat-card-content
+    fxLayout="column"
+    fxLayoutGap="10px"
+    *ngFor="let job of jobs">
+      <span
+        class="jobs__job"
+        fxLayout="column">
+        <span
+          class="job__headers"
+          fxLayout="row"
+          fxLayoutAlign="space-between">
+          <span class="job__place">{{ job.place}}</span>
+          <span class="year-span__years">{{ job.startDate }} - {{ job.endDate | zeroYear}}</span>
+        </span>
+        <span class="job__name">{{ job.name }} - {{ job.title}}</span>
+        <span class="job__desc">
+          {{ job.function }}
+        </span>
+      </span>
+  </mat-card-content>
+</mat-card>

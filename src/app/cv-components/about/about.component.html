@@ -1,0 +1,21 @@
+<mat-card
+  class="about"
+  (dblclick)="onToggleEdit($event)">
+  <mat-card-title>Om Mig</mat-card-title>
+  <mat-card-content
+    *ngIf="!isEditing">
+    {{ about }}
+  </mat-card-content>
+  <mat-card-content
+    *ngIf="isEditing"
+    (dblclick)="onToggleEdit($event)">
+    <mat-form-field
+      class="edit"
+      floatLabel="always">
+      <textarea
+        matInput
+        class="edit__textarea"
+        (keypress)="onInitialSave($event)">{{ about }}</textarea>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>

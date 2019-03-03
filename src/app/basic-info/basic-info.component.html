@@ -1,0 +1,35 @@
+<div
+  class="container"
+  fxLayout="column">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ info?.name }}</mat-card-title>
+      <mat-card-subtitle>{{ info?.title }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      [src]="croppedImage"
+      (dblclick)="onToggleEditPic()">
+    <span *ngIf="isEditingPic">
+        <input type="file" (change)="onPicChange($event)" accept="image/*">
+        <button (click)="onSave()">Save picture</button>
+      <image-cropper
+        class="basic-info__cropper"
+        [imageChangedEvent]="imageChangedEvent"
+        format="png"
+        (imageCropped)="onImageCropped($event)"
+        [aspectRatio]="9/13"
+        [onlyScaleDown]="true"></image-cropper>
+    </span>
+    <mat-card-content>
+      <ul
+        fxLayoutGap="5px"
+        fxLayout="column">
+        <li><b>Tlf:</b> +45 {{ info?.number }}</li>
+        <li><b>Mail:</b> {{ info?.email }}</li>
+        <li><b>Bopæl:</b> {{ info?.adress }}</li>
+        <li><b>Født:</b> {{ info?.birthday?.seconds * 1000 | date}}</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</div>

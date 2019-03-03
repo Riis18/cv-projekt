@@ -1,0 +1,18 @@
+<div
+  class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+  <app-about [about]="basicInfo?.about"></app-about>
+  <span
+    fxLayout="row"
+    fxLayoutAlign="space-between">
+   <app-education
+     [education]="educations"
+     fxFlex="48%"></app-education>
+   <app-languages
+     [language]="basicInfo?.language"
+     fxFlex="48%"></app-languages>
+  </span>
+  <app-experiences [experiences]="experiences"></app-experiences>
+  <app-jobs [jobs]="jobs"></app-jobs>
+</div>

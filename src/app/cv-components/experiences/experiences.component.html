@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>Kompetencer</mat-card-title>
+  <mat-card-content
+    fxLayout="column"
+    fxLayoutGap="10px">
+      <span
+        class="experiences__single"
+        *ngFor="let exp of experiences">
+        <span
+          class="experiences__headers"
+          fxLayout="row"
+          fxLayoutAlign="space-between">
+          <span class="experiences__place">{{ exp.name }}</span>
+          <span>{{ genStars(exp.rating) }}</span>
+        </span>
+        <span class="experiences__desc">
+          {{ exp.desc }}
+        </span>
+      </span>
+  </mat-card-content>
+</mat-card>

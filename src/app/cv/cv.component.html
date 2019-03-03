@@ -1,0 +1,29 @@
+<div
+  class="container"
+  fxLayoutAlign="center">
+  <div
+    fxFlex="80%"
+    fxLayout="column"
+    fxLayoutGap="10px">
+    <button
+      *ngIf="!isSaved"
+      (click)="onSave()"
+      mat-raised-button
+      class="cv__btn-save">Update Info
+    </button>
+    <div
+      fxLayout="row"
+      fxFlex="80%"
+      fxLayoutAlign="space-between">
+      <app-basic-info
+        fxFlex="28%"
+        [info]="basicInfo"></app-basic-info>
+      <app-extended-info
+        fxFlex="68%"
+        [educations]="educations"
+        [experiences]="experiences"
+        [jobs]="jobs"
+        [basicInfo]="basicInfo"></app-extended-info>
+    </div>
+  </div>
+</div>

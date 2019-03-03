@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Uddannelse</mat-card-title>
+  <mat-card-content
+    *ngFor="let educationa of education"
+    fxLayout="column"
+    fxLayoutGap="2px">
+    <b>{{ educationa.name }}</b>
+    <i>{{ educationa.education }}</i>
+    <span
+      fxLayoutAlign="end"
+      class="year-span">
+      <span class="year-span__years">
+      {{ educationa.startYear }} - {{ educationa.endYear | zeroYear }}
+      </span>
+      <span> {{educationa.status}}</span>
+      <span> {{educationa.desc}}</span>
+    </span>
+  </mat-card-content>
+</mat-card>
